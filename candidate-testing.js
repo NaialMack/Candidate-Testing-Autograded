@@ -42,11 +42,20 @@ for ( let i = 0; i<questions.length; i++) {
 }
 
 
-
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-
-
+  let numberOfCorrectQuizes = 0
+  for (let i = 0; i < questions.length; i ++) {
+    if ( candidateAnswers[i].toLowerCase() === correctAnswers[i].toLocaleLowerCase()){
+      numberOfCorrectQuizes ++
+     
+    }
+    console.log(numberOfCorrectQuizes);
+    
+  }
+  grade = (((numberOfCorrectQuizes)/(correctAnswers.length))*100);
+console.log(`Your score is : ${grade}`);
   return grade;
+  
 }
 
 function runProgram() {
